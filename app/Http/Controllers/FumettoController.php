@@ -47,7 +47,8 @@ class FumettoController extends Controller
      */
     public function show($id)
     {
-        //
+        $dettaglio_fumetto = Comic::find($id);
+        echo $dettaglio_fumetto['description'];
     }
 
     /**
