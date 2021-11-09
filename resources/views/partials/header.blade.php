@@ -10,7 +10,7 @@
               <a class="nav-link" href="{{ route('pagina-home') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Inserisci un fumetto</a>
+              <a class="nav-link" href="{{ route('fumettis.create') }}">Inserisci un fumetto</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('fumettis.index') }}">Lista dei fumetti</a>

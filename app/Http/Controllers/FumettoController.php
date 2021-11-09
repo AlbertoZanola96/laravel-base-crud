@@ -25,7 +25,8 @@ class FumettoController extends Controller
      */
     public function create()
     {
-        //
+        return view('fumettis.create');
+       
     }
 
     /**
@@ -36,7 +37,19 @@ class FumettoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $new_fumetto = new Comic();
+        $new_fumetto->title = $data['title'];
+        $new_fumetto->description = $data['description'];
+        $new_fumetto->image = $data['image'];
+        $new_fumetto->price = $data['price'];
+        $new_fumetto->series = $data['series'];
+        $new_fumetto->sale_date = $data['sale_date'];
+        $new_fumetto->type = $data['type'];
+        $new_fumetto->save();
+
+        return redirect()->route('fumettis.index');
     }
 
     /**
