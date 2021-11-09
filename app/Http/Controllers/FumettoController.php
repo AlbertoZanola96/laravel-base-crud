@@ -73,7 +73,12 @@ class FumettoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fumetto = Comic::findOrFail($id);
+        // if($dettaglio_fumetto) {
+        //     return view('fumettis.edit', compact('dettaglio_fumetto'));
+        // }
+        // abort(404);
+        return view('fumettis.edit', compact('fumetto'));
     }
 
     /**
@@ -83,9 +88,11 @@ class FumettoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $fumetti)
     {
-        //
+        $data = $request->all(); 
+        $fumetti->update($data);
+        return redirect()->route('fumettis.show', $fumetti['id']);
     }
 
     /**

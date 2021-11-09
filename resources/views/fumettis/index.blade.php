@@ -32,7 +32,7 @@
                                     class="btn btn-info">
                                     Details
                                 </a>
-                                <a href=""
+                                <a href="{{ route('fumettis.edit', $fumetto['id']) }}"
                                     class="btn btn-warning">
                                     Modify
                                 </a>
