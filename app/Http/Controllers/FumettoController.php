@@ -45,10 +45,10 @@ class FumettoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $fumetti)
     {
-        $dettaglio_fumetto = Comic::find($id);
-        echo $dettaglio_fumetto['description'];
+        return view('fumettis.show', compact('fumetti'));
+        
     }
 
     /**
