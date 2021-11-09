@@ -36,10 +36,11 @@
                                     class="btn btn-warning">
                                     Modify
                                 </a>
-                                <a href=""
-                                    class="btn btn-danger">
-                                    Delete
-                                </a>
+                                <form method="post" action="{{ route('fumettis.destroy', $fumetto['id']) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
